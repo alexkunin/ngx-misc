@@ -9,7 +9,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'npm version --allow-same-version ${nextRelease.version} && ( cd projects/alexkunin/ngx-misc && npm version --allow-same-version ${nextRelease.version} ) && ng build @alexkunin/ngx-misc && ( cd dist/alexkunin/ngx-misc && npm publish )',
+        prepareCmd: 'npm version --no-git-tag-version --allow-same-version ${nextRelease.version} && ( cd projects/alexkunin/ngx-misc && npm version --no-git-tag-version --allow-same-version ${nextRelease.version} ) && ng build @alexkunin/ngx-misc && ( cd dist/alexkunin/ngx-misc && npm publish )',
       },
     ],
     '@semantic-release/changelog',
