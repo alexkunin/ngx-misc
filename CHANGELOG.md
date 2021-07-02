@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/alexkunin/ngx-misc/compare/v1.0.2...v1.0.3) (2021-07-02)
+
+
+### Bug Fixes
+
+* fix version bumping ([0b223c6](https://github.com/alexkunin/ngx-misc/commit/0b223c67af799f4b28994afb2e685443516336c7))
+
 ## [1.0.2](https://github.com/alexkunin/ngx-misc/compare/v1.0.1...v1.0.2) (2021-07-02)
 
 
