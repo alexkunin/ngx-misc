@@ -1,6 +1,6 @@
 {
   "name": "@alexkunin/ngx-misc",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "peerDependencies": {
     "@angular/common": "^12.1.0",
     "@angular/core": "^12.1.0"

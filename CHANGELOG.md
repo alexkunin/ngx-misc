@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/alexkunin/ngx-misc/compare/v1.0.3...v1.1.0) (2021-07-03)
+
+
+### Features
+
+* implement AmbientCollectionsService ([b12e107](https://github.com/alexkunin/ngx-misc/commit/b12e10703e603d03b6b65e497236ec9f57a4b6a4))
+
 ## [1.0.3](https://github.com/alexkunin/ngx-misc/compare/v1.0.2...v1.0.3) (2021-07-02)
 
 
