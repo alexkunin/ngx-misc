@@ -2,6 +2,7 @@
  * Public API Surface of ngx-misc
  */
 
+export * from './lib/ambient-collections/ambient-collection';
 export * from './lib/ambient-collections/ambient-collections.service';
 export * from './lib/ambient-collections/ambient-collections.types';
 

@@ -1,12 +1,12 @@
 import { Injectable, InjectionToken, OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { filter, map, startWith } from 'rxjs/operators';
-import { AmbientCollectionsEvent } from './ambient-collections.types';
+import { AmbientCollectionsEvent, AmbientCollectionsServiceInterface } from './ambient-collections.types';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AmbientCollectionsService implements OnDestroy {
+export class AmbientCollectionsService implements OnDestroy, AmbientCollectionsServiceInterface {
   private readonly tokenToCollection = new Map<InjectionToken<any>, any[]>();
   private readonly itemToCollectionAndToken = new Map<any, [ any[], InjectionToken<any> ]>();
   private readonly eventsSubject = new Subject<AmbientCollectionsEvent>();
