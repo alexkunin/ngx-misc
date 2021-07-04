@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/alexkunin/ngx-misc/compare/v1.1.0...v1.2.0) (2021-07-04)
+
+
+### Bug Fixes
+
+* reuse collection reference in AmbientCollectionsService.getAll() ([8fb18e7](https://github.com/alexkunin/ngx-misc/commit/8fb18e78721c28a650436c30be04cb7cc956538c))
+
+
+### Features
+
+* implement AmbientCollectionsService.observeCollection() ([48a15df](https://github.com/alexkunin/ngx-misc/commit/48a15dfa362d702731836b435b4ed83c04c8c679))
+* implement AmbientCollectionsService.republish() ([aa97495](https://github.com/alexkunin/ngx-misc/commit/aa9749541a17bd332ad3d9dc2556afc579937fdd))
+
 # [1.1.0](https://github.com/alexkunin/ngx-misc/compare/v1.0.3...v1.1.0) (2021-07-03)
 
 
