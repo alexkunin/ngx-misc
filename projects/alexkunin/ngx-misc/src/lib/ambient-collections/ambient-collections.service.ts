@@ -1,5 +1,6 @@
 import { Injectable, InjectionToken, OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { filter, map, startWith } from 'rxjs/operators';
 import { AmbientCollectionsEvent } from './ambient-collections.types';
 
 @Injectable({
@@ -59,5 +60,14 @@ export class AmbientCollectionsService implements OnDestroy {
 
   ngOnDestroy(): void {
     this.eventsSubject.complete();
+  }
+
+  observeCollection<T>(token: InjectionToken<T>): Observable<T[]> {
+    return this.eventsSubject.pipe(
+      filter(e => e.token === token),
+      map(({ collection }) => collection),
+      startWith(this.getAll(token)),
+      map(collection => [ ...collection ]),
+    );
   }
 }

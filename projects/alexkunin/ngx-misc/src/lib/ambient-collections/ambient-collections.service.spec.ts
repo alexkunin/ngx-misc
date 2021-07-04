@@ -106,4 +106,32 @@ describe('AmbientRegistryService', () => {
       ).subscribe(([ f ]) => f());
     });
   });
+
+  test('observeCollection()', () => {
+    new TestScheduler((actual, expected) => expect(actual).toEqual(expected)).run(helpers => {
+      helpers.expectObservable(service.observeCollection(A)).toBe(
+        'ab--cde|',
+        {
+          a: [],
+          b: [ a1 ],
+          c: [ a1, a2 ],
+          d: [ a2 ],
+          e: [],
+        },
+      );
+
+      zip(
+        from([
+          () => service.publish(A, a1),
+          () => service.publish(B, b1),
+          () => service.unpublish(b1),
+          () => service.publish(A, a2),
+          () => service.unpublish(a1),
+          () => service.unpublish(a2),
+          () => service.ngOnDestroy(),
+        ]),
+        interval(1),
+      ).subscribe(([ f ]) => f());
+    });
+  });
 });
