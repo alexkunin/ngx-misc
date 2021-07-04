@@ -37,6 +37,24 @@ describe('AmbientRegistryService', () => {
     expect(service.getAll(B)).toHaveLength(0);
   });
 
+  test('getAll() should always return same array instance', () => {
+    const x = service.getAll(A);
+
+    expect(service.getAll(A)).toStrictEqual(x);
+
+    service.publish(A, a1);
+    expect(service.getAll(A)).toStrictEqual(x);
+
+    service.publish(A, a2);
+    expect(service.getAll(A)).toStrictEqual(x);
+
+    service.unpublish(a1);
+    expect(service.getAll(A)).toStrictEqual(x);
+
+    service.unpublish(a2);
+    expect(service.getAll(A)).toStrictEqual(x);
+  });
+
   describe('publish()/unpublish()', () => {
     test('valid operations', () => {
       service.publish(A, a1);

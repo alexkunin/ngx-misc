@@ -12,20 +12,15 @@ export class AmbientCollectionsService implements OnDestroy {
   private readonly eventsSubject = new Subject<AmbientCollectionsEvent>();
 
   getAll<T>(token: InjectionToken<T>): T[] {
-    return this.tokenToCollection.get(token) ?? [];
+    return this.getOrCreateCollection(token);
   }
 
   publish<T>(token: InjectionToken<T>, item: T): void {
     if (this.itemToCollectionAndToken.has(item)) {
       throw new Error('Item is already published');
     }
-    let collection = this.tokenToCollection.get(token);
-    if (collection) {
-      collection.push(item);
-    } else {
-      collection = [ item ];
-      this.tokenToCollection.set(token, collection);
-    }
+    const collection = this.getOrCreateCollection(token);
+    collection.push(item);
     this.itemToCollectionAndToken.set(item, [ collection, token ]);
     this.eventsSubject.next({
       type: 'publish',
@@ -69,5 +64,14 @@ export class AmbientCollectionsService implements OnDestroy {
       startWith(this.getAll(token)),
       map(collection => [ ...collection ]),
     );
+  }
+
+  private getOrCreateCollection<T>(token: InjectionToken<T>): T[] {
+    let collection = this.tokenToCollection.get(token);
+    if (!collection) {
+      collection = [];
+      this.tokenToCollection.set(token, collection);
+    }
+    return collection;
   }
 }
