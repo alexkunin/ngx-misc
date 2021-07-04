@@ -18,6 +18,8 @@ const B = new InjectionToken<TypeB>('B');
 
 const a1 = { a: 'a1' };
 const a2 = { a: 'a2' };
+const a3 = { a: 'a3' };
+const a4 = { a: 'a4' };
 const b1 = { b: 1 };
 
 describe('AmbientRegistryService', () => {
@@ -87,6 +89,49 @@ describe('AmbientRegistryService', () => {
 
     test('unpublish unknown', () => {
       expect(() => service.unpublish(a1)).toThrow(/not published/);
+    });
+  });
+
+  describe('republish()', () => {
+    test('normal operations', () => {
+
+      service.publish(A, a1);
+      expect(service.getAll(A)).toEqual([ a1 ]);
+
+      service.republish(a1, a2);
+      expect(service.getAll(A)).toEqual([ a2 ]);
+
+      service.republish(a2, a1);
+      expect(service.getAll(A)).toEqual([ a1 ]);
+
+      service.publish(A, a2);
+      expect(service.getAll(A)).toEqual([ a1, a2 ]);
+
+      service.publish(A, a3);
+      service.republish(a2, a4);
+      expect(service.getAll(A)).toEqual([ a1, a4, a3 ]);
+
+      service.unpublish(a1);
+      service.unpublish(a3);
+      expect(service.getAll(A)).toEqual([ a4 ]);
+    });
+
+    test('republish same value', () => {
+      service.publish(A, a1);
+      expect(() => service.republish(a1, a1)).toThrow(/already published/);
+    });
+
+    test('republish unknown value', () => {
+      expect(() => service.republish(a2, a1)).toThrow(/not published/);
+      expect(() => service.republish(a2, a2)).toThrow(/not published/);
+      service.publish(A, a1);
+      expect(() => service.republish(a2, a1)).toThrow(/not published/);
+    });
+
+    test('republish already published value', () => {
+      service.publish(A, a1);
+      service.publish(A, a2);
+      expect(() => service.republish(a1, a2)).toThrow(/already published/);
     });
   });
 
