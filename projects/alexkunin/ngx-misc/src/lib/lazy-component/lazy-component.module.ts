@@ -20,7 +20,7 @@ type Loader<C = any> = (path: string) => Observable<Type<C>>;
 
 const OUTLET_NAME = '$lco';
 
-const LAZY_COMPONENT_LOADER = new InjectionToken<Loader>(
+export const LAZY_COMPONENT_LOADER = new InjectionToken<Loader>(
   'LAZY_COMPONENT_LOADER',
   {
     factory() {
@@ -73,11 +73,11 @@ const LAZY_COMPONENT_LOADER = new InjectionToken<Loader>(
 );
 
 @Component({ template: '<router-outlet name="' + OUTLET_NAME + '"></router-outlet>' })
-class OutletContainerComponent {
+export class OutletContainerComponent {
 }
 
 @Component({ template: '' })
-class EmptyComponent {
+export class EmptyComponent {
 }
 
 @NgModule({
