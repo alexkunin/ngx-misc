@@ -10,3 +10,5 @@ export * from './lib/feature-flags/feature-flags-storage.service';
 export * from './lib/feature-flags/feature-flags.module';
 export * from './lib/feature-flags/feature-flags.service';
 export * from './lib/feature-flags/feature-flags.types';
+
+export * from './lib/lazy-component/lazy-component.module';
