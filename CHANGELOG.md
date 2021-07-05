@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/alexkunin/ngx-misc/compare/v1.3.0...v1.4.0) (2021-07-05)
+
+
+### Features
+
+* implement LazyComponentModule ([e2ab22e](https://github.com/alexkunin/ngx-misc/commit/e2ab22e9491b455e3548f41b10f51a5595396798))
+
 # [1.3.0](https://github.com/alexkunin/ngx-misc/compare/v1.2.0...v1.3.0) (2021-07-04)
 
 
