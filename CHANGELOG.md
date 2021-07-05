@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/alexkunin/ngx-misc/compare/v1.4.0...v1.4.1) (2021-07-05)
+
+
+### Bug Fixes
+
+* fix resolution errors of private DI symbols ([9c334aa](https://github.com/alexkunin/ngx-misc/commit/9c334aaea6c6edc1061aae713023b7220108533b))
+
 # [1.4.0](https://github.com/alexkunin/ngx-misc/compare/v1.3.0...v1.4.0) (2021-07-05)
 
 
