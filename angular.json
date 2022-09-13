@@ -29,6 +29,5 @@
         }
       }
     }
-  },
-  "defaultProject": "@alexkunin/ngx-misc"
+  }
 }
