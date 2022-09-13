@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/alexkunin/ngx-misc/compare/v1.4.1...v2.0.0) (2022-09-13)
+
+
+### chore
+
+* update to Angular 14 ([56a8044](https://github.com/alexkunin/ngx-misc/commit/56a804493c67e086a8d7ea7ffdb6bd56e26a67f8))
+
+
+### BREAKING CHANGES
+
+* Angular 14.2 is required.
+
 ## [1.4.1](https://github.com/alexkunin/ngx-misc/compare/v1.4.0...v1.4.1) (2021-07-05)
 
 
