@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/alexkunin/ngx-misc/compare/v2.0.0...v3.0.0) (2022-11-28)
+
+
+### chore
+
+* update to Angular 15 ([35b688b](https://github.com/alexkunin/ngx-misc/commit/35b688b9db20fd2f83b5f9c5619c17bdebda1040))
+
+
+### BREAKING CHANGES
+
+* Angular 15.0.1 is required.
+
 # [2.0.0](https://github.com/alexkunin/ngx-misc/compare/v1.4.1...v2.0.0) (2022-09-13)
 
 
